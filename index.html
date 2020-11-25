@@ -7,6 +7,11 @@
             content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
         />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta
+            name="description"
+            content="Art piece 'not enough time in the world' by Rik Hoffbauer"
+        />
+        <meta name="author" content="Rik Hoffbauer" />
         <title>notenoughtimeinthe.world</title>
         <link
             rel="apple-touch-icon"
@@ -29,65 +34,12 @@
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
-        <style type="text/css">
-            :root {
-                --color__black: #000;
-                --color__white: #fff;
-                --color__broken-white: #f7f7f7;
-
-                --body__background-color: var(--color__broken-white);
-
-                --grid__box-shadow: rgba(0, 0, 0, 0.31) 3px 2px 9px 1px;
-
-                --color__cell-0: var(--color__black);
-                --color__cell-1: var(--color__white);
-
-                --grid-size-portrait: calc(100vw - 5em);
-                --grid-size-landscape: calc(100vh - 5em);
-            }
-
-            html,
-            body {
-                height: 100%;
-                width: 100%;
-                overflow: hidden;
-                margin: 0;
-            }
-
-            body {
-                background-color: var(--body__background-color);
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-
-            .grid {
-                display: grid;
-                grid-template-columns: repeat(8, 1fr);
-                grid-template-rows: repeat(8, 1fr);
-                box-shadow: var(--grid__box-shadow);
-            }
-
-            .portrait .grid {
-                height: var(--grid-size-portrait);
-                width: var(--grid-size-portrait);
-            }
-
-            .landscape .grid {
-                height: var(--grid-size-landscape);
-                width: var(--grid-size-landscape);
-            }
-
-            .cell[data-value="0"] {
-                background-color: var(--color__cell-0);
-            }
-
-            .cell[data-value="1"] {
-                background-color: var(--color__cell-1);
-            }
-        </style>
+        <!--suppress HtmlUnknownTarget -->
+        <link rel="stylesheet" href="/css/main.css" />
     </head>
     <body>
-        <script type="module">import {main} from "./esm/main.js"; main();</script>
+        <script src="https://peterolson.github.io/BigInteger.js/BigInteger.min.js"></script>
+        <!--suppress HtmlUnknownTarget -->
+        <script src="/js/main.js"></script>
     </body>
 </html>

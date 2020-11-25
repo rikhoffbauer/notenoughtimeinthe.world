@@ -201,25 +201,10 @@
         "signature": "cd6efb9467a8b6338ece2e2855e37765700f2cd061ca54b01b33878cf5c7677e",
         "affectsGlobalScope": true
       },
-      "../src/constants.ts": {
-        "version": "ef3d814fd3f14bc5b7a835ced592b49b6beb85e3cb5792c8bae3aabd17a8ff27",
-        "signature": "f151086bd525d5cb7e4e4f1116502dc7eb544dbe27a39ccd848c19d358d7bba2",
-        "affectsGlobalScope": false
-      },
-      "../src/Clock.ts": {
-        "version": "3a8f7e78689edf97f9996dd7ca0a3f14c0732320417f1f88b89ce299e052e4e5",
-        "signature": "aac3d325d2c22fc4678790a77a1f1328db213b76e4cca65ce6c44c8247a638d1",
-        "affectsGlobalScope": false
-      },
-      "../src/UI.ts": {
-        "version": "12259dba47d75bc8428dcfcfcf9a320ac044957d4bd351339c0b3a4b5d1075bb",
-        "signature": "b99be865d22794088025e34ad45dd7991d2e3137adcdec26489caa2ec0991844",
-        "affectsGlobalScope": false
-      },
       "../src/main.ts": {
-        "version": "b38a819ff000e0add187168ebf0f49f3fe3d3176e749f61c5262bad18e08353e",
-        "signature": "0c41c10fe276159df3374ea3571ffea626c7e021c88126c3407a41da9f014f37",
-        "affectsGlobalScope": false
+        "version": "4d8d18e62ab6f8efbea00759750143218eb147c2eac9365285c0434235f41f2c",
+        "signature": "fb2aa377d0633c14f3e51c2a82dba16938d22c71e2dbad29830e54945f1c4d52",
+        "affectsGlobalScope": true
       },
       "../node_modules/.pnpm/@babel/types@7.12.7/node_modules/@babel/types/lib/index-ts3.7.d.ts": {
         "version": "e77c996592700733c33bd5e342896226ab32898c085b86dc8512128a9cd114e8",
@@ -642,7 +627,7 @@
       "keyofStringsOnly": true,
       "baseUrl": "..",
       "rootDir": "../src",
-      "outDir": "./esm",
+      "outDir": "./js",
       "configFilePath": "../tsconfig.json"
     },
     "referencedMap": {
@@ -866,13 +851,6 @@
       ],
       "../node_modules/.pnpm/pretty-format@26.6.2/node_modules/pretty-format/build/index.d.ts": [
         "../node_modules/.pnpm/pretty-format@26.6.2/node_modules/pretty-format/build/types.d.ts"
-      ],
-      "../src/Clock.ts": [
-        "../src/constants.ts"
-      ],
-      "../src/main.ts": [
-        "../src/Clock.ts",
-        "../src/UI.ts"
       ]
     },
     "exportedModulesMap": {
@@ -1212,9 +1190,6 @@
       "../node_modules/.pnpm/typescript@3.9.7/node_modules/typescript/lib/lib.esnext.intl.d.ts",
       "../node_modules/.pnpm/typescript@3.9.7/node_modules/typescript/lib/lib.esnext.promise.d.ts",
       "../node_modules/.pnpm/typescript@3.9.7/node_modules/typescript/lib/lib.esnext.string.d.ts",
-      "../src/Clock.ts",
-      "../src/UI.ts",
-      "../src/constants.ts",
       "../src/main.ts"
     ]
   },
