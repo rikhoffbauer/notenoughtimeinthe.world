@@ -8,25 +8,13 @@
     "author": "Rik Hoffbauer <pro.rikhoffbauer+notenoughtimeinthe.world@gmail.com> (https://rikhoffbauer.com)",
     "main": "index.js",
     "scripts": {
-        "preinstall": "npx only-allow pnpm",
         "build": "tsc && cp -a public/. dist",
         "fmt": "sort-package-json && node_modules/.bin/prettier --loglevel debug --write \"**/*.{js,jsx,ts,tsx,md,json,yml,yaml,czrc,bash,sh,zsh}\"",
+        "preinstall": "npx only-allow pnpm",
         "test": "jest"
-    },
-    "husky": {
-        "skipCI": false,
-        "hooks": {
-            "pre-commit": "lint-staged",
-            "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-        }
     },
     "commitlint": {
         "extends": ["@commitlint/config-conventional"]
-    },
-    "lint-staged": {
-        "*.{js,jsx,ts,tsx,md,json,yml,yaml,czrc,bash,sh,zsh,xml,iml,html,css,scss}": [
-            "prettier --loglevel warn --write"
-        ]
     },
     "config": {
         "commitizen": {
@@ -67,6 +55,9 @@
                 }
             }
         ]
+    },
+    "dependencies": {
+        "@types/mathjs": "^6.0.7"
     },
     "devDependencies": {
         "@commitlint/cli": "^11.0.0",

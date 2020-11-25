@@ -5,17 +5,23 @@ interface IMainDependencies {
 
 interface IClock {
     getState(): IClockState;
+
     subscribe(listener: () => any): this;
+
     unsubscribe(listener: () => any): this;
+
     start(): this;
 }
 
 interface IClockState {
-    bigint: bigint;
+    bignumber: math.BigNumber;
 }
+
+type BigNumber = math.BigNumber;
 
 interface IUI {
     render(props: IUIProps): this;
+
     appendTo(el: HTMLElement): this;
 }
 
@@ -24,13 +30,17 @@ interface IUIProps {
 }
 
 ((main: (deps: IMainDependencies) => any) => {
-    const _13_8_BILLION_YEARS_IN_SECONDS = BigInt(4.351968e17);
+    const { math } = window;
+    math.config({ number: "BigNumber", precision: 64 });
+    const _13_8_BILLION_YEARS_IN_SECONDS = math.bignumber("4.351968e17");
 
     class Clock implements IClock {
         public static readonly INTERVAL = 1000;
 
-        private startTime: bigint = BigInt(Math.floor(Date.now() / 1000));
-        private currentTick: bigint = BigInt(0);
+        private startTime: BigNumber = math.floor(
+            math.evaluate(`now / 1000`, { now: Date.now() }) as BigNumber,
+        );
+        private currentTick: BigNumber = math.bignumber(0);
         private subscribers = new Set<() => any>();
 
         constructor() {
@@ -48,10 +58,11 @@ interface IUIProps {
 
         public getState() {
             return {
-                bigint:
-                    BigInt(_13_8_BILLION_YEARS_IN_SECONDS) +
-                    this.startTime +
-                    this.currentTick,
+                bignumber: math.evaluate(`x + start + tick`, {
+                    x: _13_8_BILLION_YEARS_IN_SECONDS,
+                    start: this.startTime,
+                    tick: this.currentTick,
+                }),
             };
         }
 
@@ -66,7 +77,10 @@ interface IUIProps {
         }
 
         protected tick() {
-            this.currentTick += BigInt(1);
+            this.currentTick = math.evaluate(`x + y`, {
+                x: this.currentTick,
+                y: 1,
+            });
 
             for (const subscriber of this.subscribers) {
                 subscriber();
@@ -97,13 +111,15 @@ interface IUIProps {
                 throw new Error(
                     `Can't render binaryString longer than 64 characters`,
                 );
-            } else if (props.binaryString === this.previousBinaryString) {
+            } else if (this.previousBinaryString === props.binaryString) {
                 return this;
             }
 
             this.previousBinaryString = props.binaryString;
 
-            const binaryString = props.binaryString.padStart(64, "0");
+            const binaryString = props.binaryString
+                .replace(/[a-z]/g, "")
+                .padStart(64, "0");
             const rerender = Boolean(this.$root);
             const $grid: HTMLElement = (this.$root = rerender
                 ? (this.$root as HTMLElement)
@@ -161,7 +177,7 @@ interface IUIProps {
 
     function mapClockStateToUIState(clockState: IClockState): IUIProps {
         return {
-            binaryString: clockState.bigint.toString(2),
+            binaryString: clockState.bignumber.toBinary(),
         };
     }
 });
