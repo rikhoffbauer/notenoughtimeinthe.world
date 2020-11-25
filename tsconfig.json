@@ -54,7 +54,7 @@
         "keyofStringsOnly": true,
         "baseUrl": "./",
         "rootDir": "./src",
-        "outDir": "dist/esm"
+        "outDir": "dist/js"
     },
     "exclude": ["**/coverage/**", "**/node_modules/**", "**/dist/**"]
 }

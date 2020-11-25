@@ -8,7 +8,8 @@
     "author": "Rik Hoffbauer <pro.rikhoffbauer+notenoughtimeinthe.world@gmail.com> (https://rikhoffbauer.com)",
     "main": "index.js",
     "scripts": {
-        "build": "tsc && cp -a public/. dist && sed -i -e 's/<!--\\s*__MAIN_SCRIPT_PLACEHOLDER__\\s*-->/<script type=\"module\">import {main} from \".\\/esm\\/main.js\"; main();<\\/script>/g' dist/index.html",
+        "preinstall": "npx only-allow pnpm",
+        "build": "tsc && cp -a public/. dist",
         "fmt": "sort-package-json && node_modules/.bin/prettier --loglevel debug --write \"**/*.{js,jsx,ts,tsx,md,json,yml,yaml,czrc,bash,sh,zsh}\"",
         "test": "jest"
     },
