@@ -1,0 +1,111 @@
+{
+    "name": "notenoughtimeinthe.world",
+    "version": "0.0.0",
+    "description": "",
+    "keywords": ["art"],
+    "homepage": "https://notenoughtimeinthe.world",
+    "license": "MIT",
+    "author": "Rik Hoffbauer <pro.rikhoffbauer+notenoughtimeinthe.world@gmail.com> (https://rikhoffbauer.com)",
+    "main": "index.js",
+    "scripts": {
+        "build": "tsc && cp -a public/. dist && sed -i -e 's/<!--\\s*__MAIN_SCRIPT_PLACEHOLDER__\\s*-->/<script type=\"module\">import {main} from \".\\/esm\\/main.js\"; main();<\\/script>/g' dist/index.html",
+        "fmt": "sort-package-json && node_modules/.bin/prettier --loglevel debug --write \"**/*.{js,jsx,ts,tsx,md,json,yml,yaml,czrc,bash,sh,zsh}\"",
+        "test": "jest"
+    },
+    "husky": {
+        "skipCI": false,
+        "hooks": {
+            "pre-commit": "lint-staged",
+            "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+        }
+    },
+    "commitlint": {
+        "extends": ["@commitlint/config-conventional"]
+    },
+    "lint-staged": {
+        "*.{js,jsx,ts,tsx,md,json,yml,yaml,czrc,bash,sh,zsh,xml,iml,html,css,scss}": [
+            "prettier --loglevel warn --write"
+        ]
+    },
+    "config": {
+        "commitizen": {
+            "path": "cz-conventional-changelog"
+        }
+    },
+    "prettier": {
+        "arrowParens": "avoid",
+        "endOfLine": "lf",
+        "printWidth": 80,
+        "tabWidth": 4,
+        "trailingComma": "all",
+        "overrides": [
+            {
+                "files": "*.md",
+                "options": {
+                    "parser": "markdown",
+                    "printWidth": 70,
+                    "proseWrap": "never",
+                    "trailingComma": "none",
+                    "useTabs": false
+                }
+            },
+            {
+                "files": ["*.json"],
+                "options": {
+                    "parser": "json",
+                    "quoteProps": "consistent",
+                    "singleQuote": false,
+                    "tabWidth": 4,
+                    "trailingComma": "none"
+                }
+            },
+            {
+                "files": ["*.bash", "*.sh", "*.zsh", "tools/*"],
+                "options": {
+                    "parser": "sh"
+                }
+            }
+        ]
+    },
+    "devDependencies": {
+        "@commitlint/cli": "^11.0.0",
+        "@commitlint/config-conventional": "^11.0.0",
+        "@prettier/plugin-xml": "^0.12.0",
+        "@semantic-release/changelog": "^5.0.1",
+        "@semantic-release/commit-analyzer": "^8.0.1",
+        "@semantic-release/git": "^9.0.0",
+        "@semantic-release/github": "^7.2.0",
+        "@semantic-release/npm": "^7.0.8",
+        "@semantic-release/release-notes-generator": "^9.0.1",
+        "@types/jest": "^26.0.15",
+        "@types/node": "^14.14.9",
+        "commitizen": "^4.2.2",
+        "cz-conventional-changelog": "^3.3.0",
+        "import-sort": "^6.0.0",
+        "import-sort-parser-typescript": "^6.0.0",
+        "import-sort-style-module": "^6.0.0",
+        "jest": "^26.6.3",
+        "jest-cli": "^26.6.3",
+        "prettier": "^2.2.0",
+        "prettier-plugin-import-sort": "^0.0.6",
+        "prettier-plugin-sh": "^0.6.0",
+        "semantic-release": "github:rikhoffbauer/semantic-release",
+        "serve": "^11.3.2",
+        "ts-jest": "^26.4.4",
+        "ts-node": "^9.0.0"
+    },
+    "importSort": {
+        ".js, .jsx, .es6, .es, .mjs": {
+            "parser": "babylon",
+            "style": "import-sort-style-custom"
+        },
+        ".ts, .tsx": {
+            "parser": "typescript",
+            "style": "import-sort-style-custom"
+        }
+    },
+    "wallaby": {
+        "autoDetect": true,
+        "runMode": "onsave"
+    }
+}
