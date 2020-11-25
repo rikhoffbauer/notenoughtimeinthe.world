@@ -211,11 +211,6 @@
         "signature": "aac3d325d2c22fc4678790a77a1f1328db213b76e4cca65ce6c44c8247a638d1",
         "affectsGlobalScope": false
       },
-      "../src/Grid.ts": {
-        "version": "60f4b2c491ad37b8675c12406c1d5853913be340abce734d35b36c71975daa2f",
-        "signature": "6bcb9797c43bead27fdf8e590f75d663e4398b2697559e851d95261e6089cc21",
-        "affectsGlobalScope": false
-      },
       "../src/UI.ts": {
         "version": "12259dba47d75bc8428dcfcfcf9a320ac044957d4bd351339c0b3a4b5d1075bb",
         "signature": "b99be865d22794088025e34ad45dd7991d2e3137adcdec26489caa2ec0991844",
@@ -1218,7 +1213,6 @@
       "../node_modules/.pnpm/typescript@3.9.7/node_modules/typescript/lib/lib.esnext.promise.d.ts",
       "../node_modules/.pnpm/typescript@3.9.7/node_modules/typescript/lib/lib.esnext.string.d.ts",
       "../src/Clock.ts",
-      "../src/Grid.ts",
       "../src/UI.ts",
       "../src/constants.ts",
       "../src/main.ts"
