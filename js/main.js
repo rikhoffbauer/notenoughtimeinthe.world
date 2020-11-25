@@ -11,20 +11,22 @@ var __values = (this && this.__values) || function(o) {
     throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
 };
 (function (main) {
-    var _13_8_BILLION_YEARS_IN_SECONDS = BigInt(4.351968e17);
-    var Clock = /** @class */ (function () {
+    var math = window.math;
+    math.config({ number: "BigNumber", precision: 64 });
+    var _13_8_BILLION_YEARS_IN_SECONDS = math.bignumber("4.351968e17");
+    var Clock = (function () {
         function Clock() {
             Object.defineProperty(this, "startTime", {
                 enumerable: true,
                 configurable: true,
                 writable: true,
-                value: BigInt(Math.floor(Date.now() / 1000))
+                value: math.floor(math.evaluate("now / 1000", { now: Date.now() }))
             });
             Object.defineProperty(this, "currentTick", {
                 enumerable: true,
                 configurable: true,
                 writable: true,
-                value: BigInt(0)
+                value: math.bignumber(0)
             });
             Object.defineProperty(this, "subscribers", {
                 enumerable: true,
@@ -53,9 +55,11 @@ var __values = (this && this.__values) || function(o) {
             writable: true,
             value: function () {
                 return {
-                    bigint: BigInt(_13_8_BILLION_YEARS_IN_SECONDS) +
-                        this.startTime +
-                        this.currentTick,
+                    bignumber: math.evaluate("x + start + tick", {
+                        x: _13_8_BILLION_YEARS_IN_SECONDS,
+                        start: this.startTime,
+                        tick: this.currentTick,
+                    }),
                 };
             }
         });
@@ -83,7 +87,10 @@ var __values = (this && this.__values) || function(o) {
             writable: true,
             value: function () {
                 var e_1, _a;
-                this.currentTick += BigInt(1);
+                this.currentTick = math.evaluate("x + y", {
+                    x: this.currentTick,
+                    y: 1,
+                });
                 try {
                     for (var _b = __values(this.subscribers), _c = _b.next(); !_c.done; _c = _b.next()) {
                         var subscriber = _c.value;
@@ -108,7 +115,7 @@ var __values = (this && this.__values) || function(o) {
         });
         return Clock;
     }());
-    var UI = /** @class */ (function () {
+    var UI = (function () {
         function UI() {
             Object.defineProperty(this, "$root", {
                 enumerable: true,
@@ -146,11 +153,13 @@ var __values = (this && this.__values) || function(o) {
                 if (props.binaryString.length > 64) {
                     throw new Error("Can't render binaryString longer than 64 characters");
                 }
-                else if (props.binaryString === this.previousBinaryString) {
+                else if (this.previousBinaryString === props.binaryString) {
                     return this;
                 }
                 this.previousBinaryString = props.binaryString;
-                var binaryString = props.binaryString.padStart(64, "0");
+                var binaryString = props.binaryString
+                    .replace(/[a-z]/g, "")
+                    .padStart(64, "0");
                 var rerender = Boolean(this.$root);
                 var $grid = (this.$root = rerender
                     ? this.$root
@@ -198,8 +207,7 @@ var __values = (this && this.__values) || function(o) {
     }
     function mapClockStateToUIState(clockState) {
         return {
-            binaryString: clockState.bigint.toString(2),
+            binaryString: clockState.bignumber.toBinary(),
         };
     }
 });
-//# sourceMappingURL=main.js.map

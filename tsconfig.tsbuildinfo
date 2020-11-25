@@ -201,9 +201,24 @@
         "signature": "cd6efb9467a8b6338ece2e2855e37765700f2cd061ca54b01b33878cf5c7677e",
         "affectsGlobalScope": true
       },
+      "../node_modules/.pnpm/decimal.js@10.2.1/node_modules/decimal.js/decimal.d.ts": {
+        "version": "eae8cc8dc2a626108eb092a5e70bc6298fa63221e7172ff1730b713338310006",
+        "signature": "eae8cc8dc2a626108eb092a5e70bc6298fa63221e7172ff1730b713338310006",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/.pnpm/@types/mathjs@6.0.7/node_modules/@types/mathjs/index.d.ts": {
+        "version": "7b4bb091838eb5e15ef4bf12c7e354f9c22cf706464b680fdf33e133ee4cb2d2",
+        "signature": "7b4bb091838eb5e15ef4bf12c7e354f9c22cf706464b680fdf33e133ee4cb2d2",
+        "affectsGlobalScope": false
+      },
+      "../src/global.d.ts": {
+        "version": "c06157b31737cd24e86e4e600dcd7b0fe3e0559efa58a65205cc618139859da0",
+        "signature": "c06157b31737cd24e86e4e600dcd7b0fe3e0559efa58a65205cc618139859da0",
+        "affectsGlobalScope": true
+      },
       "../src/main.ts": {
-        "version": "4d8d18e62ab6f8efbea00759750143218eb147c2eac9365285c0434235f41f2c",
-        "signature": "fb2aa377d0633c14f3e51c2a82dba16938d22c71e2dbad29830e54945f1c4d52",
+        "version": "d39cf18e9565e02d86179e1956e1e4b709be1e0845acf743bd3c8b4a94fad3f7",
+        "signature": "42fe01e5d77b86a1c5a5a6a5c2c3f127f70a07d60f1593652f075bc6be27f44b",
         "affectsGlobalScope": true
       },
       "../node_modules/.pnpm/@babel/types@7.12.7/node_modules/@babel/types/lib/index-ts3.7.d.ts": {
@@ -576,11 +591,11 @@
       "pretty": true,
       "diagnostics": false,
       "traceResolution": false,
-      "removeComments": false,
+      "removeComments": true,
       "reactNamespace": "React",
       "incremental": true,
       "target": 1,
-      "module": 99,
+      "module": 5,
       "lib": [
         "lib.esnext.d.ts",
         "lib.dom.d.ts"
@@ -589,7 +604,7 @@
       "importHelpers": false,
       "newLine": 1,
       "assumeChangesOnlyAffectDirectDependencies": true,
-      "resolveJsonModule": true,
+      "resolveJsonModule": false,
       "composite": true,
       "skipDefaultLibCheck": true,
       "noEmitOnError": true,
@@ -600,7 +615,7 @@
       "allowJs": false,
       "declaration": true,
       "declarationMap": true,
-      "sourceMap": true,
+      "sourceMap": false,
       "strict": true,
       "noImplicitAny": true,
       "strictNullChecks": true,
@@ -609,11 +624,11 @@
       "strictPropertyInitialization": true,
       "noImplicitThis": true,
       "alwaysStrict": true,
-      "noUnusedLocals": false,
-      "noUnusedParameters": false,
+      "noUnusedLocals": true,
+      "noUnusedParameters": true,
       "noImplicitReturns": true,
       "moduleResolution": 2,
-      "allowSyntheticDefaultImports": true,
+      "allowSyntheticDefaultImports": false,
       "esModuleInterop": true,
       "experimentalDecorators": true,
       "emitDecoratorMetadata": true,
@@ -665,6 +680,9 @@
         "../node_modules/.pnpm/jest-diff@26.6.2/node_modules/jest-diff/build/index.d.ts",
         "../node_modules/.pnpm/pretty-format@26.6.2/node_modules/pretty-format/build/index.d.ts"
       ],
+      "../node_modules/.pnpm/@types/mathjs@6.0.7/node_modules/@types/mathjs/index.d.ts": [
+        "../node_modules/.pnpm/decimal.js@10.2.1/node_modules/decimal.js/decimal.d.ts"
+      ],
       "../node_modules/.pnpm/@types/node@14.14.9/node_modules/@types/node/base.d.ts": [
         "../node_modules/.pnpm/@types/node@14.14.9/node_modules/@types/node/assert.d.ts",
         "../node_modules/.pnpm/@types/node@14.14.9/node_modules/@types/node/ts3.6/base.d.ts"
@@ -851,6 +869,9 @@
       ],
       "../node_modules/.pnpm/pretty-format@26.6.2/node_modules/pretty-format/build/index.d.ts": [
         "../node_modules/.pnpm/pretty-format@26.6.2/node_modules/pretty-format/build/types.d.ts"
+      ],
+      "../src/global.d.ts": [
+        "../node_modules/.pnpm/@types/mathjs@6.0.7/node_modules/@types/mathjs/index.d.ts"
       ]
     },
     "exportedModulesMap": {
@@ -888,6 +909,9 @@
         "../node_modules/.pnpm/jest-diff@26.6.2/node_modules/jest-diff/build/index.d.ts",
         "../node_modules/.pnpm/pretty-format@26.6.2/node_modules/pretty-format/build/index.d.ts"
       ],
+      "../node_modules/.pnpm/@types/mathjs@6.0.7/node_modules/@types/mathjs/index.d.ts": [
+        "../node_modules/.pnpm/decimal.js@10.2.1/node_modules/decimal.js/decimal.d.ts"
+      ],
       "../node_modules/.pnpm/@types/node@14.14.9/node_modules/@types/node/base.d.ts": [
         "../node_modules/.pnpm/@types/node@14.14.9/node_modules/@types/node/assert.d.ts",
         "../node_modules/.pnpm/@types/node@14.14.9/node_modules/@types/node/ts3.6/base.d.ts"
@@ -1074,6 +1098,9 @@
       ],
       "../node_modules/.pnpm/pretty-format@26.6.2/node_modules/pretty-format/build/index.d.ts": [
         "../node_modules/.pnpm/pretty-format@26.6.2/node_modules/pretty-format/build/types.d.ts"
+      ],
+      "../src/global.d.ts": [
+        "../node_modules/.pnpm/@types/mathjs@6.0.7/node_modules/@types/mathjs/index.d.ts"
       ]
     },
     "semanticDiagnosticsPerFile": [
@@ -1088,6 +1115,7 @@
       "../node_modules/.pnpm/@types/istanbul-lib-report@3.0.0/node_modules/@types/istanbul-lib-report/index.d.ts",
       "../node_modules/.pnpm/@types/istanbul-reports@3.0.0/node_modules/@types/istanbul-reports/index.d.ts",
       "../node_modules/.pnpm/@types/jest@26.0.15/node_modules/@types/jest/index.d.ts",
+      "../node_modules/.pnpm/@types/mathjs@6.0.7/node_modules/@types/mathjs/index.d.ts",
       "../node_modules/.pnpm/@types/minimist@1.2.1/node_modules/@types/minimist/index.d.ts",
       "../node_modules/.pnpm/@types/node@14.14.9/node_modules/@types/node/assert.d.ts",
       "../node_modules/.pnpm/@types/node@14.14.9/node_modules/@types/node/async_hooks.d.ts",
@@ -1143,6 +1171,7 @@
       "../node_modules/.pnpm/@types/stack-utils@2.0.0/node_modules/@types/stack-utils/index.d.ts",
       "../node_modules/.pnpm/@types/yargs-parser@15.0.0/node_modules/@types/yargs-parser/index.d.ts",
       "../node_modules/.pnpm/@types/yargs@15.0.10/node_modules/@types/yargs/index.d.ts",
+      "../node_modules/.pnpm/decimal.js@10.2.1/node_modules/decimal.js/decimal.d.ts",
       "../node_modules/.pnpm/jest-diff@26.6.2/node_modules/jest-diff/build/cleanupSemantic.d.ts",
       "../node_modules/.pnpm/jest-diff@26.6.2/node_modules/jest-diff/build/diffLines.d.ts",
       "../node_modules/.pnpm/jest-diff@26.6.2/node_modules/jest-diff/build/index.d.ts",
@@ -1190,6 +1219,7 @@
       "../node_modules/.pnpm/typescript@3.9.7/node_modules/typescript/lib/lib.esnext.intl.d.ts",
       "../node_modules/.pnpm/typescript@3.9.7/node_modules/typescript/lib/lib.esnext.promise.d.ts",
       "../node_modules/.pnpm/typescript@3.9.7/node_modules/typescript/lib/lib.esnext.string.d.ts",
+      "../src/global.d.ts",
       "../src/main.ts"
     ]
   },
